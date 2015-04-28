@@ -2,11 +2,20 @@
 <html>
 	<head>
 		<title><%= full_title(yield(:title)) %></title>
+		<%= stylesheet_link_tag 'application', media: 'all',
+			'data-turbolinks-track' => true %>
+			<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+			<%= csrf_meta_tags %>
+			<!--[if lt IE 9]>
+			<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+			</script>
+			<![endif]-->
 	</head>
 	<body>
-		<h1>UserAuth Base App</h1>
-		<p>
-		This is a base app tha tallows for user authentication and authorization.
-		</p>
+		<%= render 'layouts/header' %>
+		<div class="container">
+			<%= yield %>
+		</div>
+		<%= render 'layouts/footer' %>
 	</body>
 </html>
