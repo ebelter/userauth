@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :users
 
   root 'welcome#home'
-  get 'welcome/home'
+  get 'about' => 'welcome#about'
+  get 'contact' => 'welcome#contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
