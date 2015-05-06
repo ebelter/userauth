@@ -31,7 +31,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email addresses should be unique" do
-    u1 = User.new(name: "U1", email: "user@example.com")
+    u1 = User.new(name: "U1", email: "user@example.com", password: 'password', password_confirmation: 'password')
     assert u1.valid?
     assert u1.save
     u2 = User.new(name: "U2", email: "user@example.com")
