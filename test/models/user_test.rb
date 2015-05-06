@@ -34,9 +34,9 @@ class UserTest < ActiveSupport::TestCase
     u1 = User.new(name: "U1", email: "user@example.com", password: 'password', password_confirmation: 'password')
     assert u1.valid?
     assert u1.save
-    u2 = User.new(name: "U2", email: "user@example.com")
-    assert_not u2.save
+    u2 = User.new(name: "U2", email: u1.email.upcase, password: 'password', password_confirmation: 'password')
     assert_not u2.valid?
+    assert_not u2.save
   end
 
   test "email validation should accept valid addresses" do
