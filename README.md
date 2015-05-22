@@ -1,30 +1,4 @@
-== README
+#User Auth - Base Application for the Web
 
-User Auth - Base Application for the Web
+This is Michael Hartl's excellent rails tutorial that shows you how to roll your own user authenticartion system. Find it here: https://www.railstutorial.org/book/beginning
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
