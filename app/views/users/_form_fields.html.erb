@@ -11,4 +11,6 @@
 <%= f.password_field :password, class: 'form-control' %>
 
 <%= f.label :password_confirmation, "Confirmation" %>
-<%= f.password_field :password_confirmation, class: 'form-control' %>
+<span id="passwordsMatchMsg" class="passwordsMatchMsg"></span>
+<%= f.password_field :password_confirmation, class: 'form-control', :onkeyup => 'checkPasswordsMatch()' %>
+
