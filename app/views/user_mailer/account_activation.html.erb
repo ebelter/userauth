@@ -1,10 +1,10 @@
 Hi <%= @user.name %>,
 <p>
-Welcome to UserAuth! 
+Welcome to <%= base_title %>! 
 <%= link_to "Click ", edit_account_activation_url(@user.activation_token, email: @user.email) %>
  to activate your account.
 </p>
 <p>
 Sincerely,<br>
-The UserAuth Team
+The <%= base_title %> Team
 </p>
