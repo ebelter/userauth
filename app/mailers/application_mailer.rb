@@ -1,4 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "noreply@userauth.com"
+  helper :application
+  default from: "noreply@" + Rails.application.secrets.action_mailer_host_name
   layout 'mailer'
 end
