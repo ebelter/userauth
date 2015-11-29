@@ -1,14 +1,14 @@
 module ApplicationHelper
 
-  def base_title 
+  def app_name 
     "UserAuth"
   end
 
   def full_title(page_title = '')
     if page_title.empty?
-      base_title
+      app_name
     else
-      "#{page_title} | " + base_title
+      "#{page_title} | " + app_name
     end
   end
 end

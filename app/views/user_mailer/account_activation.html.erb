@@ -1,10 +1,10 @@
 Hi <%= @user.name %>,
 <p>
-Welcome to <%= base_title %>! 
+Welcome to <%= app_name %>! 
 <%= link_to "Click ", edit_account_activation_url(@user.activation_token, email: @user.email) %>
  to activate your account.
 </p>
 <p>
 Sincerely,<br>
-The <%= base_title %> Team
+The <%= app_name %> Team
 </p>
