@@ -6,6 +6,8 @@ class WelcomeControllerTest < ActionController::TestCase
     get :home
     assert_response :success
     assert_select "title", "Home | " + app_name
+    assert_select "a[href=?]", login_path
+    assert_select "a[href=?]", signup_path
   end
 
   test "should get about" do
