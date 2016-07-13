@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(name: "Simba", email: "simba@bootlegginbbq.com",
+    @user = User.new(name: "Simba", email: "simba@example.com",
                          password: "foobar", password_confirmation: "foobar")
   end
 
@@ -26,12 +26,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email should not be too long" do
-    @user.email = "a" * 244 + "@bootlegginbbq.com"
+    @user.email = "a" * 244 + "@example.com"
     assert_not @user.valid?
   end
 
   test "email addresses should be unique" do
-    u1 = User.new(name: "U1", email: "user@bootlegginbbq.com", password: 'password', password_confirmation: 'password')
+    u1 = User.new(name: "U1", email: "user@example.com", password: 'password', password_confirmation: 'password')
     assert u1.valid?
     assert u1.save
     u2 = User.new(name: "U2", email: u1.email.upcase, password: 'password', password_confirmation: 'password')
@@ -40,8 +40,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email validation should accept valid addresses" do
-    valid_addresses = %w[user@bootlegginbbq.com USER@bootlegginbbq.com first.last@bootlegginbbq.com alice+bob@bootlegginbbq.com]
-    #valid_addresses = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org first.last@foo.jp alice+bob@baz.cn]
+    valid_addresses = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org first.last@foo.jp alice+bob@baz.cn]
     valid_addresses.each do |valid_address|
       @user.email = valid_address
       assert @user.valid?, "#{valid_address.inspect} should be valid"
@@ -57,7 +56,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "email addresses should be saved as lower-case" do
-    mixed_case_email = "Foo@BooTleggInBbQ.CoM"
+    mixed_case_email = "Foo@ExAMPle.CoM"
     @user.email = mixed_case_email
     @user.save
     assert_equal mixed_case_email.downcase, @user.reload.email

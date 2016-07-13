@@ -8,7 +8,7 @@ mufie:
 
 nala:
   name: Nala
-  email: nala@bootlegginbbq.com
+  email: nala@botlegginbbq.com
   password_digest: <%= User.digest('password') %>
   activated: true
   activated_at: <%= Time.zone.now %>
