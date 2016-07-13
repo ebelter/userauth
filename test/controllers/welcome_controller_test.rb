@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WelcomeControllerTest < ActionController::TestCase
+class MainControllerTest < ActionController::TestCase
 
   test "should get home" do
     get :home
@@ -20,5 +20,11 @@ class WelcomeControllerTest < ActionController::TestCase
     get :contact
     assert_response :success
     assert_select "title", "Contact | " + app_name
+  end
+
+  test "should get dashboard" do
+    get :dashboard
+    assert_response :success
+    assert_select "title", "Dashboard | " + app_name
   end
 end
